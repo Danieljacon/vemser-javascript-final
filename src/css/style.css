@@ -17,3 +17,18 @@
 .height-100{
     height: 100vh;
 }
+
+@keyframes size {
+    from {
+        transform: scale(1);
+    }
+
+    to {
+        transform: scale(1.05);
+    }
+}
+
+.table-new-hover:hover {
+    border-radius: 20px !important;
+    animation: size .3s ease-in-out forwards;
+}

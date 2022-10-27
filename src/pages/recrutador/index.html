@@ -24,7 +24,50 @@
                         </tr>
                     </tbody>
                 </table>
-                <button class="btn btn-primary w-25 mt-5 mb-5">Cadastrar vaga</button>
+                <!-- <button class="btn btn-primary w-25 mt-5 mb-5">Cadastrar vaga</button> -->
+                <!-- Button trigger modal -->
+                <button type="button" class="btn btn-primary w-25 mt-5 mb-5" data-bs-toggle="modal"
+                    data-bs-target="#recrutador-cadastrar-vaga">
+                    Cadastrar Vaga
+                </button>
+
+                <!-- Modal -->
+                <div class="modal fade" id="recrutador-cadastrar-vaga" tabindex="-1" aria-labelledby="exampleModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h1 class="modal-title fs-5">Cadastrar Vaga</h1>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                
+                            <form class="modal-body">
+                                <div class="d-flex flex-column align-items-start">
+                                    <label class="form-label fw-bold mt-2" for="input-recrutador-vaga">Título da
+                                        Vaga:</label>
+                                    <input class="w-100 form-control text-black-50" type="text"
+                                        id="input-recrutador-vaga" required>
+                                </div>
+                                <div class="d-flex flex-column align-items-start">
+                                    <label class="form-label fw-bold mt-2" for="input-recrutador-descricao">Descrição da
+                                        vaga:</label>
+                                    <input class="w-100 form-control text-black-50" type="text"
+                                        id="input-recrutador-descricao" required>
+                                </div>
+                                <div class="d-flex flex-column align-items-start">
+                                    <label class="form-label fw-bold mt-2"
+                                        for="input-recrutador-remuneracao">Remuneração inicial:</label>
+                                    <input class="w-100 form-control text-black-50" type="text"
+                                        id="input-recrutador-remuneracao" required>
+                                </div>
+                            </form>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-primary">Cadastrar vaga</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

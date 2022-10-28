@@ -20,7 +20,9 @@
                         <tr class="text-black-50">
                             <td>Dev React Jr</td>
                             <td class="text-end px-3">R$ 5000</td>
-                            <td><button class="btn btn-primary w-100 my-3">Ver</button></td>
+                            <!--abre modal ver vaga-->
+                            <td><button class="btn btn-primary w-100 my-3" data-bs-toggle="modal"
+                                    data-bs-target="#recrutador-ver-vaga">Ver</button></td>
                         </tr>
                     </tbody>
                 </table>
@@ -41,7 +43,7 @@
                                 <button type="button" class="btn-close" data-bs-dismiss="modal"
                                     aria-label="Close"></button>
                             </div>
-                
+
                             <form class="modal-body">
                                 <div class="d-flex flex-column align-items-start">
                                     <label class="form-label fw-bold mt-2" for="input-recrutador-vaga">Título da
@@ -63,10 +65,65 @@
                                 </div>
                             </form>
                             <div class="modal-footer">
-                                <button type="button" class="btn btn-primary" onclick="postVaga()">Cadastrar vaga</button>
+                                <button type="button" class="btn btn-primary" onclick="postVaga()">Cadastrar
+                                    vaga</button>
                             </div>
                         </div>
                     </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal ver vagas -->
+    <div class="modal fade" id="recrutador-ver-vaga" tabindex="-1" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+
+                <form class="modal-body text-black-50">
+                    <div class="d-flex flex-row justify-content-between">
+                        <div><span class="fw-bold">ID da vaga:</span> ###</div>
+                        <div><span class="fw-bold">Remuneração:</span> R$ 5000</div>
+                    </div>
+                    <div>
+                        <span class="fw-bold">Título:</span> Dev React Jr
+                    </div>
+                    <div>
+                        <span class="fw-bold">Descrição da vaga:</span> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sollicitudin sit
+                        amet ante in euismod. Aenean nec maximus risus. Mauris fringilla tincidunt lacus, vel
+                        consectetur orci finibus quis.
+                    </div>
+                    <div class="text-center fw-bold mt-3 mb-3">Candidatos inscritos na vaga</div>
+                    <table class="w-100">
+                        <tbody>
+                            <tr>
+                                <th>Nome</th>
+                                <th>Data de Nascimento</th>
+                                <th></th>
+                            </tr>
+                            <tr class="text-black-50">
+                                <td>Dev React Jr</td>
+                                <td class="text-end px-3">R$ 5000</td>
+                                <td><button class="btn btn-danger w-100 my-3">Reprovar</button></td>
+                            </tr>
+                            <tr class="text-black-50">
+                                <td>Dev React Jr</td>
+                                <td class="text-end px-3">R$ 5000</td>
+                                <td><button class="btn btn- w-100 my-3" disabled>Reprovar</button></td>
+                            </tr>
+                            <tr class="text-black-50">
+                                <td>Dev React Jr</td>
+                                <td class="text-end px-3">R$ 5000</td>
+                                <td><button class="btn btn-danger w-100 my-3">Reprovar</button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </form>
+                <div class="modal-footer justify-content-center">
+                    <button type="button" class="btn btn-primary mt-3 w-75" onclick="deleteVaga()">Excluir Vaga</button>
                 </div>
             </div>
         </div>

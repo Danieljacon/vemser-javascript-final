@@ -115,6 +115,13 @@
       "descricao": "Manda em coisas",
       "remuneracao": 12000,
       "candidatos": []
+    },
+    {
+      "titulo": "QA Jr.",
+      "descricao": "Fazer poucos testes",
+      "remuneracao": "2500",
+      "candidatos": [],
+      "id": 5
     }
   ]
 }

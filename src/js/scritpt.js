@@ -36,13 +36,12 @@ async function postVaga(){
     const response = await fetch(`${url}/vaga`);
     const post = await response.json();
 
-    let titulo = document.getElementById('').value;
-    let descricao = document.getElementById('').value;
-    let remuneracao = document.getElementById('').value;
-    let candidatos = document.getElementById('').value;
+    let titulo = document.getElementById('input-recrutador-vaga').value;
+    let descricao = document.getElementById('input-recrutador-descricao').value;
+    let remuneracao = document.getElementById('input-recrutador-remuneracao').value;
 
 
-    var vaga = new Vaga(titulo, descricao, remuneracao, candidatos);
+    var vaga = new Vaga(titulo, descricao, remuneracao);
 
     await fetch(`${url}/vaga`, {
         method: 'POST',
@@ -65,7 +64,7 @@ async function postCandidatura(){
     const post = await response.json();
 
     let idVaga = document.getElementById('').value;
-    let isCandidato = document.getElementById('').value;
+    let idCandidato = document.getElementById('').value;
     let status = document.getElementById('').value;
 
     var candidato = new Candidatura(idVaga, idCandidato, status);

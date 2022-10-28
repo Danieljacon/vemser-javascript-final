@@ -97,6 +97,8 @@ async function postUser() {
   );
   let email = document.getElementById("input-signup-email").value;
   let password = document.getElementById("input-signup-password").value;
+  const divError = document.querySelector("#input-error");
+  const msgError = document.createElement("p");
 
   var user = new Usuario(
     tipoSelected,
@@ -106,22 +108,33 @@ async function postUser() {
     password
   );
 
-  await fetch(`${url}/usuario`, {
-    method: "POST",
-    body: JSON.stringify({
-      tipo: user.tipo,
-      nome: user.nome,
-      dataNascimento: user.dataNascimento,
-      email: user.email,
-      senha: user.senha,
-      candidaturas: user.candidaturas,
-    }),
-    headers: {
-      "Content-type": "application/json; charset=UTF-8",
-    },
-  })
-    .then((response) => response.json())
-    .then((json) => console.log(json));
+  let testUserCreate = post.filter(
+    (usuario) =>
+      usuario.email == user.email
+  );
+  if (testUserCreate == "") {
+    await fetch(`${url}/usuario`, {
+      method: "POST",
+      body: JSON.stringify({
+        tipo: user.tipo,
+        nome: user.nome,
+        dataNascimento: user.dataNascimento,
+        email: user.email,
+        senha: user.senha,
+        candidaturas: user.candidaturas,
+      }),
+      headers: {
+        "Content-type": "application/json; charset=UTF-8",
+      },
+    })
+      .then((response) => response.json())
+      .then((json) => console.log(json));
+  }else{
+      msgError.innerText = "Email já cadastrado.";
+      msgError.style.color = "red";
+      divError.insertAdjacentElement("beforeend", msgError);
+  }
+  
 }
 
 // ********************** Funcao LOGIN **********************

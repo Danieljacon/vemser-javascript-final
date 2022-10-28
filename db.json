@@ -108,7 +108,10 @@
           "nome": "Alain",
           "nascimento": "21/03/2004"
         }
-      ]
+      ],
+      "idCandidato": 1,
+      "nome": "Daniel",
+      "nascimento": "07/01/2001"
     },
     {
       "id": 2,
@@ -137,13 +140,6 @@
       "remuneracao": "2500",
       "candidatos": [],
       "id": 5
-    },
-    {
-      "titulo": "",
-      "descricao": "",
-      "remuneracao": "",
-      "candidatos": [],
-      "id": 6
     }
   ]
 }

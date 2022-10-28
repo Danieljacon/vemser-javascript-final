@@ -8,7 +8,7 @@ const getVagas = async () => {
   return (vagas = [...vagasResponse]);
 };
 
-const postCandidatura = async (idCandidato, nome, nascimento) => {
+const postCandidatura = async (idCandidato, nome, nascimento, idVaga) => {
   await fetch(`http://localhost:3000/vaga`, {
     method: "POST",
     body: JSON.stringify({
@@ -19,7 +19,7 @@ const postCandidatura = async (idCandidato, nome, nascimento) => {
     headers: {
       "Content-type": "application/json; charset=UTF-8",
     },
-  })
+  });
 };
 
 const loadPageCandidato = async () => {
@@ -28,14 +28,28 @@ const loadPageCandidato = async () => {
 
   const response = await fetch(`${url}/usuario/${idUser}`);
   var post = await response.json();
-  console.log(post);
 
   getVagas().then((vaga) => {
-      vaga.map((vaga) => {
+    vaga.map((vaga) => {
       const valorVaga = Number(vaga.remuneracao).toLocaleString("pt-BR", {
         style: "currency",
         currency: "BRL",
       });
+      const getHtmlCandidatos = () => {
+        if (vaga.candidatos == null) {
+          return ;
+        } else {
+          return vaga.candidatos.map((candidato) => {
+            return `
+            <tr>
+                <td>${candidato.nome}</td>
+                <td class="text-end py-2">${candidato.nascimento}</td>
+            </tr>
+            `;
+          });
+        }
+      };
+
       showVagas.innerHTML += `
         <tr class="text-black-50">
             <td>${vaga.titulo}</td>
@@ -45,9 +59,7 @@ const loadPageCandidato = async () => {
                     data-bs-target="#exampleModal-${vaga.id}">
                     Ver
                 </button>
-                <div class="modal fade" id="exampleModal-${
-                  vaga.id
-                }" tabindex="-1"
+                <div class="modal fade" id="exampleModal-${vaga.id}" tabindex="-1"
                     aria-labelledby="exampleModalLabel" aria-hidden="true">
                     <div class="modal-dialog">
                         <div class="modal-content">
@@ -60,22 +72,16 @@ const loadPageCandidato = async () => {
                                     <div class="col-12 d-flex flex-column">
                                         <div class="d-flex justify-content-between opacity-75">
                                             <p class="my-2">ID da vaga: <span
-                                                    id="id-vaga-candidato">${
-                                                      vaga.id
-                                                    }</span></p>
+                                                    id="id-vaga-candidato">${vaga.id}</span></p>
                                             <p class="my-2">Remuneração: <span
                                                     id="remuneracao-vaga-candidato">${valorVaga}</span></p>
                                         </div>
                                         <div class="opacity-75">
                                             <p class="fw-bold m-0 my-1">Título: <span
                                                     class="fw-light"
-                                                    id="titulo-candidato-vaga">${
-                                                      vaga.titulo
-                                                    }</span></p>
+                                                    id="titulo-candidato-vaga">${vaga.titulo}</span></p>
                                             <p class="fw-bold m-0 my-1">Descrição da vaga: <span
-                                                    class="fw-light">${
-                                                      vaga.descricao
-                                                    }</span></p>
+                                                    class="fw-light">${vaga.descricao}</span></p>
                                         </div>
                                         <p class="fw-bold text-center mt-3 opacity-75">Candidatos inscritos
                                             na vaga</p>
@@ -88,20 +94,11 @@ const loadPageCandidato = async () => {
                                                     </tr>
                                                 </thead>
                                                 <tbody>
-                                                    ${vaga.candidatos.map(
-                                                      (candidato) => {
-                                                        return `
-                                                        <tr>
-                                                            <td>${candidato.nome}</td>
-                                                            <td class="text-end py-2">${candidato.nascimento}</td>
-                                                        </tr>
-                                                        `;
-                                                      }
-                                                    )}
+                                                  ${getHtmlCandidatos()}
                                                 </tbody>
                                             </table>
                                         </div>
-                                        <button onclick="postCandidatura(1, 'Daniel', '07/01/2001')" class="btn btn-primary py-2 mt-5 w-75 opacity-100 align-self-center">Candidatar-me</button>
+                                        <button onclick="postCandidatura(1, 'Daniel', '07/01/2001', 1)" class="btn btn-primary py-2 mt-5 w-75 opacity-100 align-self-center">Candidatar-me</button>
                                     </div>
                                 </div>
                             </div>

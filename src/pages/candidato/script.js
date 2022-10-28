@@ -9,12 +9,21 @@ const getVagas = async () => {
 };
 
 const postCandidatura = async (idCandidato, nome, nascimento, idVaga) => {
-  await fetch(`http://localhost:3000/vaga`, {
-    method: "POST",
+
+  const response = await fetch(`${url}/vaga`);
+  const vagasResponse = await response.json();
+  const teste = vagasResponse.filter(vagas => vagas.id == idVaga)[0].candidatos
+  teste.push({
+    "idCandidato": idCandidato,
+    "nome": nome,
+    "nascimento": nascimento
+})
+
+console.log(nascimento)
+  await fetch(`http://localhost:3000/vaga/${idVaga}`, {
+    method: "PATCH",
     body: JSON.stringify({
-      idCandidato: idCandidato,
-      nome: nome,
-      nascimento: nascimento,
+      candidatos: teste
     }),
     headers: {
       "Content-type": "application/json; charset=UTF-8",
@@ -24,11 +33,10 @@ const postCandidatura = async (idCandidato, nome, nascimento, idVaga) => {
 
 const loadPageCandidato = async () => {
   const idUser = window.location.search.replace("?id=", "");
-  console.log(idUser);
-
   const response = await fetch(`${url}/usuario/${idUser}`);
-  var post = await response.json();
+  let post = await response.json();
 
+ 
   getVagas().then((vaga) => {
     vaga.map((vaga) => {
       const valorVaga = Number(vaga.remuneracao).toLocaleString("pt-BR", {
@@ -98,7 +106,7 @@ const loadPageCandidato = async () => {
                                                 </tbody>
                                             </table>
                                         </div>
-                                        <button onclick="postCandidatura(1, 'Daniel', '07/01/2001', 1)" class="btn btn-primary py-2 mt-5 w-75 opacity-100 align-self-center">Candidatar-me</button>
+                                        <button onclick="postCandidatura(${post.id}, '${post.nome}', '${post.dataNascimento}', ${vaga.id})" class="btn btn-primary py-2 mt-5 w-75 opacity-100 align-self-center">Candidatar-me</button>
                                     </div>
                                 </div>
                             </div>
@@ -111,5 +119,4 @@ const loadPageCandidato = async () => {
     });
   });
 };
-
 loadPageCandidato();

@@ -7,11 +7,7 @@
       "dataNascimento": "10/05/1995",
       "email": "pietro@teste.com",
       "senha": "123456",
-      "candidaturas": [
-        {
-          "idVaga": 1
-        }
-      ]
+      "candidaturas": []
     },
     {
       "tipo": "Recrutador",
@@ -27,14 +23,14 @@
       "nome": "Daniel",
       "dataNascimento": "1995-06-16",
       "email": "daniel@teste.com",
-      "senha": "123456789",
+      "senha": "123456",
       "candidaturas": [],
       "id": 3
     },
     {
       "tipo": "Candidato",
       "nome": "Daniela",
-      "dataNascimento": "Fri, 15 May 1992 00:00:00 GMT",
+      "dataNascimento": "1995-06-16",
       "email": "daniela@teste.com",
       "senha": "1234654",
       "candidaturas": [],
@@ -91,21 +87,7 @@
       "titulo": "QA senior",
       "descricao": "Testa muitas coisas",
       "remuneracao": 7000,
-      "candidatos": [
-        {
-          "idCandidato": 1,
-          "nome": "Daniel",
-          "nascimento": "07/01/2001"
-        },
-        {
-          "idCandidato": 2,
-          "nome": "Alain",
-          "nascimento": "21/03/2004"
-        }
-      ],
-      "idCandidato": 1,
-      "nome": "Daniel",
-      "nascimento": "07/01/2001"
+      "candidatos": []
     },
     {
       "id": 2,

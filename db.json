@@ -1,0 +1,120 @@
+{
+  "usuario": [
+    {
+      "id": 1,
+      "tipo": "Candidato",
+      "nome": "Pietro",
+      "dataNascimento": "10/05/1995",
+      "email": "pietro@teste.com",
+      "senha": "123456",
+      "candidaturas": []
+    },
+    {
+      "tipo": "Recrutador",
+      "nome": "Rawad",
+      "dataNascimento": "19/10/1991",
+      "email": "rawad@teste.com",
+      "senha": "12345",
+      "candidaturas": [],
+      "id": 2
+    },
+    {
+      "tipo": "recrutador",
+      "nome": "Daniel",
+      "dataNascimento": "1995-06-16",
+      "email": "daniel@teste.com",
+      "senha": "123456789",
+      "candidaturas": [],
+      "id": 3
+    },
+    {
+      "tipo": "Candidato",
+      "nome": "Daniela",
+      "dataNascimento": "Fri, 15 May 1992 00:00:00 GMT",
+      "email": "daniela@teste.com",
+      "senha": "1234654",
+      "candidaturas": [],
+      "id": 4
+    },
+    {
+      "tipo": "Candidato",
+      "nome": "Alain",
+      "dataNascimento": "Tue, 20 Apr 1999 00:00:00 GMT",
+      "email": "alain@teste.com",
+      "senha": "hahahaha",
+      "candidaturas": [],
+      "id": 5
+    },
+    {
+      "tipo": "Recrutador",
+      "nome": "Daniel",
+      "dataNascimento": "Wed, 24 Jun 1998 00:00:00 GMT",
+      "email": "daniel@teste.com",
+      "senha": "1654987",
+      "candidaturas": [],
+      "id": 6
+    },
+    {
+      "tipo": "Candidato",
+      "nome": "teste",
+      "dataNascimento": "1999-06-15T03:00:00.000Z",
+      "email": "teste@teste",
+      "senha": "askdhasoiujfhlaskfd",
+      "candidaturas": [],
+      "id": 7
+    }
+  ],
+  "candidatura": [
+    {
+      "id": 1,
+      "titulo": "QA",
+      "remuneracao": 3000,
+      "descricao": "Testar coisas",
+      "candidatos": []
+    },
+    {
+      "id": 2,
+      "titulo": "Frontend",
+      "remuneracao": 2500,
+      "descricao": "Pintar botao",
+      "candidatos": []
+    },
+    {
+      "id": 3,
+      "titulo": "Backend",
+      "remuneracao": 2600,
+      "descricao": "Fazer banco",
+      "candidatos": []
+    }
+  ],
+  "vaga": [
+    {
+      "id": 1,
+      "titulo": "QA senior",
+      "descricao": "Testa muitas coisas",
+      "remuneracao": 7000,
+      "candidatos": []
+    },
+    {
+      "id": 2,
+      "titulo": "Frontend senior",
+      "descricao": "Pinta muitos botoes",
+      "remuneracao": 7000,
+      "candidatos": []
+    },
+    {
+      "id": 3,
+      "titulo": "Backend pleno",
+      "descricao": "Faz alguns bancos",
+      "remuneracao": 7000,
+      "candidatos": []
+    },
+    {
+      "id": 4,
+      "titulo": "Tech lead",
+      "descricao": "Manda em coisas",
+      "remuneracao": 12000,
+      "candidatos": []
+    }
+  ]
+}

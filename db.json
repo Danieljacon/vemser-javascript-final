@@ -7,7 +7,11 @@
       "dataNascimento": "10/05/1995",
       "email": "pietro@teste.com",
       "senha": "123456",
-      "candidaturas": []
+      "candidaturas": [
+        {
+          "idVaga": 1
+        }
+      ]
     },
     {
       "tipo": "Recrutador",
@@ -93,7 +97,18 @@
       "titulo": "QA senior",
       "descricao": "Testa muitas coisas",
       "remuneracao": 7000,
-      "candidatos": []
+      "candidatos": [
+        {
+          "idCandidato": 1,
+          "nome": "Daniel",
+          "nascimento": "07/01/2001"
+        },
+        {
+          "idCandidato": 2,
+          "nome": "Alain",
+          "nascimento": "21/03/2004"
+        }
+      ]
     },
     {
       "id": 2,
@@ -122,6 +137,13 @@
       "remuneracao": "2500",
       "candidatos": [],
       "id": 5
+    },
+    {
+      "titulo": "",
+      "descricao": "",
+      "remuneracao": "",
+      "candidatos": [],
+      "id": 6
     }
   ]
 }

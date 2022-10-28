@@ -94,27 +94,51 @@
       "titulo": "Frontend senior",
       "descricao": "Pinta muitos botoes",
       "remuneracao": 7000,
-      "candidatos": []
+      "candidatos": [
+        {
+          "idCandidato": 3,
+          "nome": "Daniel",
+          "nascimento": "07/01/2001"
+        }
+      ]
     },
     {
       "id": 3,
       "titulo": "Backend pleno",
       "descricao": "Faz alguns bancos",
       "remuneracao": 7000,
-      "candidatos": []
+      "candidatos": [
+        {
+          "idCandidato": 3,
+          "nome": "Daniel",
+          "nascimento": "07/01/2001"
+        }
+      ]
     },
     {
       "id": 4,
       "titulo": "Tech lead",
       "descricao": "Manda em coisas",
       "remuneracao": 12000,
-      "candidatos": []
+      "candidatos": [
+        {
+          "idCandidato": 3,
+          "nome": "Daniel",
+          "nascimento": "07/01/2001"
+        }
+      ]
     },
     {
       "titulo": "QA Jr.",
       "descricao": "Fazer poucos testes",
       "remuneracao": "2500",
-      "candidatos": [],
+      "candidatos": [
+        {
+          "idCandidato": 3,
+          "nome": "Daniel",
+          "nascimento": "07/01/2001"
+        }
+      ],
       "id": 5
     }
   ]

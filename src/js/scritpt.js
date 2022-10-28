@@ -1,5 +1,6 @@
 const url = "http://localhost:3000";
 
+
 class Usuario {
 
     constructor(tipo, nome, dataNascimento, email, senha) {
@@ -117,6 +118,37 @@ async function postUser(){
     .then(response => response.json())
     .then(json => console.log(json))
 }
+
+// ********************** Funcao LOGIN **********************
+
+    document.querySelector("form").addEventListener('submit', function(event) {
+        event.preventDefault();
+        userLogin(event)
+    })
+
+async function userLogin(e) {
+    const response = await fetch(`${url}/usuario`);
+    const post = await response.json();
+    const formData = new FormData(e.target).entries();
+    const inputUser = Object.fromEntries(formData);
+    const divError = document.querySelector('#input-error')
+    const msgError = document.createElement('p')
+
+
+
+    let accessUser = post.filter(usuario => usuario.email == inputUser.email && usuario.senha == inputUser.senha)
+
+    if(accessUser == '' ) {
+        if(divError.firstElementChild !== null) {
+            divError.firstChild.remove()
+        } else {
+            msgError.innerText = 'Confira seu email e/ou senha. Tente novamente !!'
+            msgError.style.color = 'red'
+            divError.insertAdjacentElement('beforeend', msgError)
+        }
+    }
+}
+
 
 // async function getAllPosts(){
 //     const response = await fetch(url);

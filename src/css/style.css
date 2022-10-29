@@ -36,3 +36,7 @@
     border-radius: 20px !important;
     animation: size .3s ease-in-out forwards;
 }
+
+.sair{
+    text-decoration: none;
+}

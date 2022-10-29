@@ -76,7 +76,7 @@ const loadPageCandidato = async (e) => {
                 <td class="text-end py-2">${candidato.nascimento}</td>
             </tr>
             `;
-          });
+          }).join("");
         }
       };
 

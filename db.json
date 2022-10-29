@@ -87,7 +87,26 @@
       "titulo": "QA senior",
       "descricao": "Testa muitas coisas",
       "remuneracao": 7000,
-      "candidatos": []
+      "candidatos": [
+        {
+          "idCandidato": 3,
+          "nome": "Daniel",
+          "nascimento": "07/01/2001",
+          "reprovado": false
+        },
+        {
+          "idCandidato": 4,
+          "nome": "Daniel",
+          "nascimento": "07/01/2001",
+          "reprovado": false
+        },
+        {
+          "idCandidato": 5,
+          "nome": "Daniel",
+          "nascimento": "07/01/2001",
+          "reprovado": true
+        }
+      ]
     },
     {
       "id": 2,
@@ -96,9 +115,17 @@
       "remuneracao": 7000,
       "candidatos": [
         {
-          "idCandidato": 3,
-          "nome": "Daniel",
-          "nascimento": "07/01/2001"
+          "id": 2,
+          "titulo": "Frontend senior",
+          "descricao": "Pinta muitos botoes",
+          "remuneracao": 7000,
+          "candidatos": [
+            {
+              "idCandidato": 3,
+              "nome": "Daniel",
+              "nascimento": "07/01/2001"
+            }
+          ]
         }
       ]
     },
@@ -154,6 +181,13 @@
       "remuneracao": "2000",
       "candidatos": [],
       "id": 7
+    },
+    {
+      "titulo": "PIETRO",
+      "descricao": "faz nada",
+      "remuneracao": "1",
+      "candidatos": [],
+      "id": 8
     }
   ]
 }

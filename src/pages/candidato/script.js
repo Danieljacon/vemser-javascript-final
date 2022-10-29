@@ -14,12 +14,12 @@ const postCandidatura = async (idCandidato, nome, nascimento, idVaga) => {
   const vagasResponse = await response.json();
   const teste = vagasResponse.filter(vagas => vagas.id == idVaga)[0].candidatos
   teste.push({
-    "idCandidato": idCandidato,
-    "nome": nome,
-    "nascimento": nascimento
+    idCandidato: idCandidato,
+    nome: nome,
+    nascimento: nascimento,
+    reprovado: false
 })
 
-console.log(nascimento)
   await fetch(`http://localhost:3000/vaga/${idVaga}`, {
     method: "PATCH",
     body: JSON.stringify({
@@ -29,8 +29,6 @@ console.log(nascimento)
       "Content-type": "application/json; charset=UTF-8",
     },
   })
-    .then((response) => response.json())
-    .then((json) => console.log(json));
 };
 
 const loadPageCandidato = async (e) => {

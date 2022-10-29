@@ -53,7 +53,7 @@
           "idCandidato": 4,
           "nome": "Daniel Jacon",
           "nascimento": "2001-01-07T03:00:00.000Z",
-          "reprovado": false
+          "reprovado": true
         }
       ],
       "id": 1

@@ -12,17 +12,20 @@
 </head>
 
 <body>
-    <div class="container d-flex flex-column height-100 align-items-center justify-content-center">
+    <div class="d-flex justify-content-end">
+        <div class="p-3"><a class="text-black-50 sair" href="../../../index.html">Sair <img src="../../assets/sair.png" alt=""></a></div>
+    </div>
+    <div class="container d-flex flex-column mb-5 align-items-center justify-content-center">
         <div class="shadow-lg w-75 p-5 rounded-3">
             <div class="d-flex flex-column align-items-center w-100">
                 <table class="w-100">
                     <tbody id="recrutador-vagas">
-                       
+
                     </tbody>
                 </table>
                 <!-- <button class="btn btn-primary w-25 mt-5 mb-5">Cadastrar vaga</button> -->
                 <!-- Button trigger modal -->
-                <button type="button" class="btn btn-primary w-25 mt-5 mb-5" data-bs-toggle="modal"
+                <button type="button" class="btn btn-primary w-25 mt-5" data-bs-toggle="modal"
                     data-bs-target="#recrutador-cadastrar-vaga">
                     Cadastrar Vaga
                 </button>
@@ -68,6 +71,7 @@
             </div>
         </div>
     </div>
+    
     <!-- Modal ver vagas -->
     <div class="modal fade" id="recrutador-ver-vaga" tabindex="-1" aria-labelledby="exampleModalLabel"
         aria-hidden="true">
@@ -86,7 +90,8 @@
                         <span class="fw-bold">Título:</span> Dev React Jr
                     </div>
                     <div>
-                        <span class="fw-bold">Descrição da vaga:</span> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sollicitudin sit
+                        <span class="fw-bold">Descrição da vaga:</span> Lorem ipsum dolor sit amet, consectetur
+                        adipiscing elit. Sed sollicitudin sit
                         amet ante in euismod. Aenean nec maximus risus. Mauris fringilla tincidunt lacus, vel
                         consectetur orci finibus quis.
                     </div>

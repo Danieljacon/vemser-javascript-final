@@ -49,17 +49,28 @@ async function reprovarCandidao(e, idVaga) {
   e.disabled = true;
   const response = await fetch(`${url}/vaga/`);
   const vagasResponse = await response.json();
-  const candidatosAtualizados = vagasResponse.filter(
+  let candidatosAtualizados = vagasResponse.filter(
     (vagas) => vagas.id == idVaga
   )[0].candidatos;
-  const candidatoReprovado = candidatosAtualizados.find(
-    (candidatos) => candidatos.idCandidato == e.id
-  );
+  candidatosAtualizados.map((item) => {
+    if(item.idCandidato == e.id) {
+      return item.reprovado = true;
+    }
+  });
+  console.log(candidatosAtualizados)
+
+  // const candidatoReprovado = candidatosAtualizados.find(
+  //   (candidatos) => candidatos.idCandidato == e.id
+  // );
+  // console.log(candidatoReprovado.reprovado = true)
+  // const candidatoFinal = candidatosAtualizados.remove((e) => {
+  //   return e.idCandidato === e.id
+  // })
 
   await fetch(`http://localhost:3000/vaga/${idVaga}`, {
     method: "PATCH",
     body: JSON.stringify({
-      candidatos: [{ ...candidatoReprovado, reprovado: true }],
+      candidatos: candidatosAtualizados,
     }),
     headers: {
       "Content-type": "application/json; charset=UTF-8",
@@ -116,7 +127,9 @@ const candidatosNaVaga = async (id) => {
                 </tbody>
             </table>
             <div class="modal-footer justify-content-center">
-                <button type="button" onclick="deleteVaga(${vaga.id})" class="btn btn-primary mt-3 w-75">Excluir Vaga</button>
+                <button type="button" onclick="deleteVaga(${
+                  vaga.id
+                })" class="btn btn-primary mt-3 w-75">Excluir Vaga</button>
             </div>
         `);
   });

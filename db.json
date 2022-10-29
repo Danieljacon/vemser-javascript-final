@@ -1,122 +1,47 @@
 {
   "usuario": [
     {
-      "id": 1,
-      "tipo": "Candidato",
-      "nome": "Pietro",
-      "dataNascimento": "07/01/2001",
-      "email": "pietro@teste.com",
-      "senha": "123456",
-      "candidaturas": []
+      "tipo": "Recrutador",
+      "nome": "Recrutador 1",
+      "dataNascimento": "1999-12-12T03:00:00.000Z",
+      "email": "recrutador@gmail.com",
+      "senha": "123",
+      "candidaturas": [],
+      "id": 1
     },
     {
-      "tipo": "Recrutador",
-      "nome": "Rawad",
-      "dataNascimento": "19/10/1991",
-      "email": "rawad@teste.com",
-      "senha": "12345",
+      "tipo": "Candidato",
+      "nome": "Candidato 1",
+      "dataNascimento": "2001-12-13T03:00:00.000Z",
+      "email": "candidato1@gmail.com",
+      "senha": "123",
       "candidaturas": [],
       "id": 2
     },
     {
-      "tipo": "recrutador",
-      "nome": "Daniel",
-      "dataNascimento": "1995-06-16",
-      "email": "daniel@teste.com",
-      "senha": "123456",
+      "tipo": "Candidato",
+      "nome": "Candidato 2",
+      "dataNascimento": "1888-12-16T03:00:00.000Z",
+      "email": "candidato3@gmail.com",
+      "senha": "123",
       "candidaturas": [],
       "id": 3
-    },
-    {
-      "tipo": "Candidato",
-      "nome": "Daniela",
-      "dataNascimento": "1995-06-16",
-      "email": "daniela@teste.com",
-      "senha": "1234654",
-      "candidaturas": [],
-      "id": 4
-    },
-    {
-      "tipo": "Candidato",
-      "nome": "Alain",
-      "dataNascimento": "Tue, 20 Apr 1999 00:00:00 GMT",
-      "email": "alain@teste.com",
-      "senha": "hahahaha",
-      "candidaturas": [],
-      "id": 5
-    },
-    {
-      "tipo": "Recrutador",
-      "nome": "Daniel",
-      "dataNascimento": "Wed, 24 Jun 1998 00:00:00 GMT",
-      "email": "daniel@teste.com",
-      "senha": "1654987",
-      "candidaturas": [],
-      "id": 6
-    },
-    {
-      "tipo": "Candidato",
-      "nome": "teste",
-      "dataNascimento": "1999-06-15T03:00:00.000Z",
-      "email": "teste@teste",
-      "senha": "askdhasoiujfhlaskfd",
-      "candidaturas": [],
-      "id": 7
-    },
-    {
-      "tipo": "Candidato",
-      "nome": "daniel jacon",
-      "dataNascimento": "1999-12-12T03:00:00.000Z",
-      "email": "danieljacon@gmail.com",
-      "senha": "1",
-      "candidaturas": [],
-      "id": 8
-    }
-  ],
-  "candidatura": [
-    {
-      "idVaga": 1,
-      "idCandidato": 2,
-      "reprovado": false
-    },
-    {
-      "idVaga": 1,
-      "idCandidato": 2,
-      "reprovado": true
-    },
-    {
-      "idVaga": 2,
-      "idCandidato": 2,
-      "reprovado": true
     }
   ],
   "vaga": [
     {
-      "titulo": "PIETRO",
-      "descricao": "faz nada",
-      "remuneracao": "1",
-      "candidatos": [],
-      "id": 8
-    },
-    {
-      "titulo": "Front End",
-      "descricao": "Ganha muito",
-      "remuneracao": "1200",
+      "titulo": "front",
+      "descricao": "asdasfda",
+      "remuneracao": "1234",
       "candidatos": [
         {
-          "idCandidato": 1,
-          "nome": "Pietro",
-          "nascimento": "07/01/2001",
-          "reprovado": true
-        },
-        {
-          "idCandidato": 8,
-          "nome": "daniel jacon",
-          "nascimento": "1999-12-12T03:00:00.000Z",
+          "idCandidato": 2,
+          "nome": "Candidato 1",
+          "nascimento": "2001-12-13T03:00:00.000Z",
           "reprovado": false
         }
       ],
-      "id": 9
+      "id": 1
     }
   ]
 }

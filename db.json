@@ -26,6 +26,24 @@
       "senha": "123",
       "candidaturas": [],
       "id": 3
+    },
+    {
+      "tipo": "Candidato",
+      "nome": "ewrter",
+      "dataNascimento": "1212-12-12T03:00:00.000Z",
+      "email": "rawaddfg@teste.com",
+      "senha": "12345",
+      "candidaturas": [],
+      "id": 4
+    },
+    {
+      "tipo": "Candidato",
+      "nome": "etwr",
+      "dataNascimento": "1212-02-12T03:00:00.000Z",
+      "email": "rawasdfgsdfd@teste.com",
+      "senha": "12345",
+      "candidaturas": [],
+      "id": 5
     }
   ],
   "vaga": [

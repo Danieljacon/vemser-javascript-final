@@ -108,10 +108,7 @@ async function postUser() {
     password
   );
 
-  let testUserCreate = post.filter(
-    (usuario) =>
-      usuario.email == user.email
-  );
+  let testUserCreate = post.filter((usuario) => usuario.email == user.email);
   if (testUserCreate == "") {
     await fetch(`${url}/usuario`, {
       method: "POST",
@@ -128,13 +125,20 @@ async function postUser() {
       },
     })
       .then((response) => response.json())
-      .then((json) => console.log(json));
-  }else{
-      msgError.innerText = "Email já cadastrado.";
-      msgError.style.color = "red";
-      divError.insertAdjacentElement("beforeend", msgError);
+      .then((json) => {
+        localStorage.setItem("user", JSON.stringify(json));
+        if (json.tipo == "Candidato") {
+          window.location = `/src/pages/candidato/index.html?id=${json.id}`;
+        } else if (json.tipo == "Recrutador") {
+          window.location = `/src/pages/recrutador/index.html?id=${json.id}`;
+        }
+      });
+  } else {
+    msgError.innerText = "Email já cadastrado.";
+    msgError.style.color = "red";
+    divError.insertAdjacentElement("beforeend", msgError);
+    return;
   }
-  
 }
 
 // ********************** Funcao LOGIN **********************
@@ -161,9 +165,9 @@ async function userLogin(e) {
     }
   } else {
     if (accessUser[0].tipo == "Candidato") {
-      window.location = `/src/pages/candidato/index.html?id=${accessUser[0].id}`
-    } else if(accessUser[0].tipo == "Recrutador"){
-        window.location = `/src/pages/recrutador/index.html?id=${accessUser[0].id}`
+      window.location = `/src/pages/candidato/index.html?id=${accessUser[0].id}`;
+    } else if (accessUser[0].tipo == "Recrutador") {
+      window.location = `/src/pages/recrutador/index.html?id=${accessUser[0].id}`;
     }
   }
   console.log(accessUser);
@@ -173,15 +177,3 @@ document.querySelector("form").addEventListener("submit", function (event) {
   event.preventDefault();
   userLogin(event);
 });
-
-// async function getAllPosts(){
-//     const response = await fetch(url);
-//     const post = await response.json();
-
-//     post.map(x => {
-//         document.getElementById('posts-container').innerHTML +=
-//         `<p>${x.id} - ${x.tipo} - ${x.nome}</p>
-//         <hr>`;
-//     })
-// }
-// getAllPosts();

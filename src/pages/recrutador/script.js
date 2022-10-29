@@ -57,15 +57,6 @@ async function reprovarCandidao(e, idVaga) {
       return item.reprovado = true;
     }
   });
-  console.log(candidatosAtualizados)
-
-  // const candidatoReprovado = candidatosAtualizados.find(
-  //   (candidatos) => candidatos.idCandidato == e.id
-  // );
-  // console.log(candidatoReprovado.reprovado = true)
-  // const candidatoFinal = candidatosAtualizados.remove((e) => {
-  //   return e.idCandidato === e.id
-  // })
 
   await fetch(`http://localhost:3000/vaga/${idVaga}`, {
     method: "PATCH",

@@ -17,6 +17,7 @@ const postCandidatura = async (idCandidato, nome, nascimento, idVaga) => {
     idCandidato: idCandidato,
     nome: nome,
     nascimento: nascimento,
+    reprovado: false,
   });
 
   await fetch(`http://localhost:3000/vaga/${idVaga}`, {
@@ -27,7 +28,7 @@ const postCandidatura = async (idCandidato, nome, nascimento, idVaga) => {
     headers: {
       "Content-type": "application/json; charset=UTF-8",
     },
-  })
+  });
 };
 
 const removeCandidatura = async (idCandidato, idVaga) => {
@@ -87,7 +88,13 @@ const loadPageCandidato = async (e) => {
             (candidato) => candidato.idCandidato == idUser
           );
           if (candidato.length > 0) {
-            return `
+            console.log(candidato[0].reprovado);
+            if (candidato[0].reprovado) {
+              return `
+              <button class="btn btn-danger" disabled>Reprovado</button>
+              `;
+            } else
+              return `
             <button class="btn btn-danger" onclick="removeCandidatura(${idUser}, ${vaga.id})">Remover Candidatura</button>
             `;
           } else {

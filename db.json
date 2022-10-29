@@ -86,14 +86,28 @@
       "titulo": "QA Jr.",
       "descricao": "Fazer poucos testes",
       "remuneracao": "2500",
-      "candidatos": [],
+      "candidatos": [
+        {
+          "idCandidato": 1,
+          "nome": "Pietro",
+          "nascimento": "07/01/2001",
+          "reprovado": false
+        }
+      ],
       "id": 5
     },
     {
       "titulo": "2",
       "descricao": "2",
       "remuneracao": "2",
-      "candidatos": [],
+      "candidatos": [
+        {
+          "idCandidato": 1,
+          "nome": "Pietro",
+          "nascimento": "07/01/2001",
+          "reprovado": true
+        }
+      ],
       "id": 6
     },
     {
@@ -104,7 +118,8 @@
         {
           "idCandidato": 1,
           "nome": "Pietro",
-          "nascimento": "07/01/2001"
+          "nascimento": "07/01/2001",
+          "reprovado": false
         }
       ],
       "id": 7

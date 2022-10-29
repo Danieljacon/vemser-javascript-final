@@ -53,8 +53,8 @@ async function reprovarCandidao(e, idVaga) {
     (vagas) => vagas.id == idVaga
   )[0].candidatos;
   candidatosAtualizados.map((item) => {
-    if(item.idCandidato == e.id) {
-      return item.reprovado = true;
+    if (item.idCandidato == e.id) {
+      return (item.reprovado = true);
     }
   });
 
@@ -83,14 +83,14 @@ const candidatosNaVaga = async (id) => {
     });
     return (formVaga.innerHTML += `
         <div class="d-flex flex-row justify-content-between">
-        <div><span class="fw-bold">ID da vaga:</span>${vaga.id}</div>
-        <div><span class="fw-bold">Remuneração:</span>${valorVaga}</div>
+        <div><span class="fw-bold">ID da vaga: </span>${vaga.id}</div>
+        <div><span class="fw-bold">Remuneração: </span>${valorVaga}</div>
         </div>
             <div>
-                    <span class="fw-bold">Título:</span>${vaga.titulo}
+                    <span class="fw-bold">Título: </span>${vaga.titulo}
                 </div>
                 <div>
-                    <span class="fw-bold">Descrição da vaga:</span>${
+                    <span class="fw-bold">Descrição da vaga: </span>${
                       vaga.descricao
                     }
             </div>
@@ -99,8 +99,7 @@ const candidatosNaVaga = async (id) => {
             <tbody>
                 <tr>
                     <th>Nome</th>
-                    <th>Data de Nascimento</th>
-                    <th></th>
+                    <th class="text-end">Data de Nascimento</th>
                 </tr>
                 ${vaga.candidatos.map((candidato) => {
                   let disabled = "";
@@ -110,8 +109,16 @@ const candidatosNaVaga = async (id) => {
                   return `
                   <tr class="text-black-50">
                     <td>${candidato.nome}</td>
-                    <td class="text-end px-3">${candidato.nascimento}</td>
-                    <td><button id="${candidato.idCandidato}" onclick="reprovarCandidao(this, ${vaga.id})" ${disabled} class="btn btn-danger w-100 my-3">Reprovar</button></td>
+                    <td class="text-end px-3">${candidato.nascimento
+                      .split("T")[0]
+                      .split("-")
+                      .reverse()
+                      .join("/")}</td>
+                    <td><button id="${
+                      candidato.idCandidato
+                    }" onclick="reprovarCandidao(this, ${
+                    vaga.id
+                  })" ${disabled} class="btn btn-danger w-100 my-3">Reprovar</button></td>
                 </tr>
                 `;
                 })}

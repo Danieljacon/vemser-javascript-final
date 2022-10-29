@@ -133,6 +133,7 @@ async function postUser() {
           window.location = `/src/pages/recrutador/index.html?id=${json.id}`;
         }
       });
+
   } else {
     msgError.innerText = "Email já cadastrado.";
     msgError.style.color = "red";

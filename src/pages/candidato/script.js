@@ -73,7 +73,7 @@ const loadPageCandidato = async (e) => {
             return `
             <tr>
                 <td>${candidato.nome}</td>
-                <td class="text-end py-2">${candidato.nascimento}</td>
+                <td class="text-end py-2">${candidato.nascimento.split("T")[0].split("-").reverse().join("/")}</td>
             </tr>
             `;
           }).join("");
@@ -88,7 +88,6 @@ const loadPageCandidato = async (e) => {
             (candidato) => candidato.idCandidato == idUser
           );
           if (candidato.length > 0) {
-            console.log(candidato[0].reprovado);
             if (candidato[0].reprovado) {
               return `
               <button class="btn btn-danger" disabled>Reprovado</button>

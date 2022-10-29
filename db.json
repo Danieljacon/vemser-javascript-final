@@ -1,62 +1,35 @@
 {
   "usuario": [
     {
-      "tipo": "Recrutador",
-      "nome": "Recrutador 1",
-      "dataNascimento": "1999-12-12T03:00:00.000Z",
-      "email": "recrutador@gmail.com",
+      "tipo": "Candidato",
+      "nome": "Daniel",
+      "dataNascimento": "2001-01-07T03:00:00.000Z",
+      "email": "daniel@gmail.com",
       "senha": "123",
       "candidaturas": [],
       "id": 1
     },
     {
-      "tipo": "Candidato",
-      "nome": "Candidato 1",
-      "dataNascimento": "2001-12-13T03:00:00.000Z",
-      "email": "candidato1@gmail.com",
+      "tipo": "Recrutador",
+      "nome": "Recrutador 1",
+      "dataNascimento": "1999-12-12T03:00:00.000Z",
+      "email": "recrutador1@gmail.com",
       "senha": "123",
       "candidaturas": [],
       "id": 2
-    },
-    {
-      "tipo": "Candidato",
-      "nome": "Candidato 2",
-      "dataNascimento": "1888-12-16T03:00:00.000Z",
-      "email": "candidato3@gmail.com",
-      "senha": "123",
-      "candidaturas": [],
-      "id": 3
-    },
-    {
-      "tipo": "Candidato",
-      "nome": "ewrter",
-      "dataNascimento": "1212-12-12T03:00:00.000Z",
-      "email": "rawaddfg@teste.com",
-      "senha": "12345",
-      "candidaturas": [],
-      "id": 4
-    },
-    {
-      "tipo": "Candidato",
-      "nome": "etwr",
-      "dataNascimento": "1212-02-12T03:00:00.000Z",
-      "email": "rawasdfgsdfd@teste.com",
-      "senha": "12345",
-      "candidaturas": [],
-      "id": 5
     }
   ],
   "vaga": [
     {
-      "titulo": "front",
-      "descricao": "asdasfda",
-      "remuneracao": "1234",
+      "titulo": "Front End",
+      "descricao": "Desenvolvedor Front End com habilidades em React e Javascript.",
+      "remuneracao": "1200",
       "candidatos": [
         {
-          "idCandidato": 2,
-          "nome": "Candidato 1",
-          "nascimento": "2001-12-13T03:00:00.000Z",
-          "reprovado": false
+          "idCandidato": 1,
+          "nome": "Daniel",
+          "nascimento": "2001-01-07T03:00:00.000Z",
+          "reprovado": true
         }
       ],
       "id": 1

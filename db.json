@@ -62,6 +62,15 @@
       "senha": "askdhasoiujfhlaskfd",
       "candidaturas": [],
       "id": 7
+    },
+    {
+      "tipo": "Candidato",
+      "nome": "daniel jacon",
+      "dataNascimento": "1999-12-12T03:00:00.000Z",
+      "email": "danieljacon@gmail.com",
+      "senha": "1",
+      "candidaturas": [],
+      "id": 8
     }
   ],
   "candidatura": [
@@ -83,53 +92,31 @@
   ],
   "vaga": [
     {
-      "titulo": "QA Jr.",
-      "descricao": "Fazer poucos testes",
-      "remuneracao": "2500",
-      "candidatos": [
-        {
-          "idCandidato": 1,
-          "nome": "Pietro",
-          "nascimento": "07/01/2001",
-          "reprovado": false
-        }
-      ],
-      "id": 5
+      "titulo": "PIETRO",
+      "descricao": "faz nada",
+      "remuneracao": "1",
+      "candidatos": [],
+      "id": 8
     },
     {
-      "titulo": "2",
-      "descricao": "2",
-      "remuneracao": "2",
+      "titulo": "Front End",
+      "descricao": "Ganha muito",
+      "remuneracao": "1200",
       "candidatos": [
         {
           "idCandidato": 1,
           "nome": "Pietro",
           "nascimento": "07/01/2001",
           "reprovado": true
-        }
-      ],
-      "id": 6
-    },
-    {
-      "titulo": "Essa vaga é top",
-      "descricao": "testando",
-      "remuneracao": "2000",
-      "candidatos": [
+        },
         {
-          "idCandidato": 1,
-          "nome": "Pietro",
-          "nascimento": "07/01/2001",
+          "idCandidato": 8,
+          "nome": "daniel jacon",
+          "nascimento": "1999-12-12T03:00:00.000Z",
           "reprovado": false
         }
       ],
-      "id": 7
-    },
-    {
-      "titulo": "PIETRO",
-      "descricao": "faz nada",
-      "remuneracao": "1",
-      "candidatos": [],
-      "id": 8
+      "id": 9
     }
   ]
 }

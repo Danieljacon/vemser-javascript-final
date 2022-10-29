@@ -4,7 +4,7 @@
       "id": 1,
       "tipo": "Candidato",
       "nome": "Pietro",
-      "dataNascimento": "10/05/1995",
+      "dataNascimento": "07/01/2001",
       "email": "pietro@teste.com",
       "senha": "123456",
       "candidaturas": []
@@ -83,62 +83,10 @@
   ],
   "vaga": [
     {
-      "id": 1,
-      "titulo": "QA senior",
-      "descricao": "Testa muitas coisas",
-      "remuneracao": 7000,
-      "candidatos": []
-    },
-    {
-      "id": 2,
-      "titulo": "Frontend senior",
-      "descricao": "Pinta muitos botoes",
-      "remuneracao": 7000,
-      "candidatos": [
-        {
-          "idCandidato": 3,
-          "nome": "Daniel",
-          "nascimento": "07/01/2001"
-        }
-      ]
-    },
-    {
-      "id": 3,
-      "titulo": "Backend pleno",
-      "descricao": "Faz alguns bancos",
-      "remuneracao": 7000,
-      "candidatos": [
-        {
-          "idCandidato": 3,
-          "nome": "Daniel",
-          "nascimento": "07/01/2001"
-        }
-      ]
-    },
-    {
-      "id": 4,
-      "titulo": "Tech lead",
-      "descricao": "Manda em coisas",
-      "remuneracao": 12000,
-      "candidatos": [
-        {
-          "idCandidato": 3,
-          "nome": "Daniel",
-          "nascimento": "07/01/2001"
-        }
-      ]
-    },
-    {
       "titulo": "QA Jr.",
       "descricao": "Fazer poucos testes",
       "remuneracao": "2500",
-      "candidatos": [
-        {
-          "idCandidato": 3,
-          "nome": "Daniel",
-          "nascimento": "07/01/2001"
-        }
-      ],
+      "candidatos": [],
       "id": 5
     },
     {
@@ -152,7 +100,13 @@
       "titulo": "Essa vaga é top",
       "descricao": "testando",
       "remuneracao": "2000",
-      "candidatos": [],
+      "candidatos": [
+        {
+          "idCandidato": 1,
+          "nome": "Pietro",
+          "nascimento": "07/01/2001"
+        }
+      ],
       "id": 7
     }
   ]

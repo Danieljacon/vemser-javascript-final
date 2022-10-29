@@ -9,28 +9,48 @@ const getVagas = async () => {
 };
 
 const postCandidatura = async (idCandidato, nome, nascimento, idVaga) => {
-
   const response = await fetch(`${url}/vaga`);
   const vagasResponse = await response.json();
-  const teste = vagasResponse.filter(vagas => vagas.id == idVaga)[0].candidatos
-  teste.push({
-    "idCandidato": idCandidato,
-    "nome": nome,
-    "nascimento": nascimento
-})
+  const vagasCandidato = vagasResponse.filter((vagas) => vagas.id == idVaga)[0]
+    .candidatos;
+  vagasCandidato.push({
+    idCandidato: idCandidato,
+    nome: nome,
+    nascimento: nascimento,
+  });
 
-console.log(nascimento)
   await fetch(`http://localhost:3000/vaga/${idVaga}`, {
     method: "PATCH",
     body: JSON.stringify({
-      candidatos: teste
+      candidatos: vagasCandidato,
     }),
     headers: {
       "Content-type": "application/json; charset=UTF-8",
     },
   })
-    .then((response) => response.json())
-    .then((json) => console.log(json));
+};
+
+const removeCandidatura = async (idCandidato, idVaga) => {
+  const response = await fetch(`${url}/vaga`);
+  const vagasResponse = await response.json();
+  const vagasCandidato = vagasResponse.filter((vagas) => vagas.id == idVaga)[0]
+    .candidatos;
+  const candidato = vagasCandidato.filter(
+    (candidato) => candidato.idCandidato == idCandidato
+  )[0];
+  const index = vagasCandidato.indexOf(candidato);
+
+  vagasCandidato.splice(index, 1);
+
+  await fetch(`http://localhost:3000/vaga/${idVaga}`, {
+    method: "PATCH",
+    body: JSON.stringify({
+      candidatos: vagasCandidato,
+    }),
+    headers: {
+      "Content-type": "application/json; charset=UTF-8",
+    },
+  });
 };
 
 const loadPageCandidato = async (e) => {
@@ -38,9 +58,7 @@ const loadPageCandidato = async (e) => {
   const response = await fetch(`${url}/usuario/${idUser}`);
   let post = await response.json();
 
- 
   getVagas().then((vaga) => {
-    console.log(vaga);
     vaga.map((vaga) => {
       const valorVaga = Number(vaga.remuneracao).toLocaleString("pt-BR", {
         style: "currency",
@@ -58,6 +76,23 @@ const loadPageCandidato = async (e) => {
             </tr>
             `;
           });
+        }
+      };
+
+      const checarCandidatura = () => {
+        if (vaga.candidatos == null) {
+          return;
+        } else {
+          const candidato = vaga.candidatos.filter(
+            (candidato) => candidato.idCandidato == idUser
+          );
+          if (candidato.length > 0) {
+            return `
+            <button class="btn btn-danger" onclick="removeCandidatura(${idUser}, ${vaga.id})">Remover Candidatura</button>
+            `;
+          } else {
+            return `<button class="btn btn-primary" onclick="postCandidatura(${post.id}, '${post.nome}', '${post.dataNascimento}', ${vaga.id})">Candidatar</button>`;
+          }
         }
       };
 
@@ -117,7 +152,7 @@ const loadPageCandidato = async (e) => {
                                                 </tbody>
                                             </table>
                                         </div>
-                                        <button onclick="postCandidatura(${post.id}, '${post.nome}', '${post.dataNascimento}', ${vaga.id})" class="btn btn-primary py-2 mt-5 w-75 opacity-100 align-self-center">Candidatar-me</button>
+                                        ${checarCandidatura()}
                                     </div>
                                 </div>
                             </div>

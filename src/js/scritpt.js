@@ -29,6 +29,17 @@ class Vaga {
     this.candidatos = []; // lista de candidatos na vaga
   }
 }
+const htmlMsgError = (message) => {
+  const divError = document.querySelector("#input-error");
+  divError.style.color = "red";
+
+  return (divError.innerHTML += `
+  <div class="alert alert-danger alert-dismissible fade show position-fixed fixed-top m-5" style="opacity: .85;" role="alert">
+    <strong>Hei!</strong> ${message}.
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>
+  `);
+};
 
 async function postVaga() {
   const response = await fetch(`${url}/vaga`);
@@ -97,8 +108,27 @@ async function postUser() {
   );
   let email = document.getElementById("input-signup-email").value;
   let password = document.getElementById("input-signup-password").value;
-  const divError = document.querySelector("#input-error");
-  const msgError = document.createElement("p");
+
+  // validações
+  if (nome == "") {
+    htmlMsgError("O nome não pode ser vazio");
+    return;
+  } if (data == "") {
+    htmlMsgError("A data não pode ser vazia");
+    return;
+  } if (email == "") {
+    htmlMsgError("O email não pode ser vazio");
+    return;
+  } if (password == "") {
+    htmlMsgError("A senha não pode ser vazia");
+    return;
+  } if (password.length < 6) {
+    htmlMsgError("A senha deve ter no mínimo 6 caracteres");
+    return;
+  } if(nome.split(" ").length < 2) {
+    htmlMsgError("O nome deve ter no mínimo 2 palavras");
+    return;
+  }
 
   var user = new Usuario(
     tipoSelected,
@@ -133,11 +163,8 @@ async function postUser() {
           window.location = `/src/pages/recrutador/index.html?id=${json.id}`;
         }
       });
-
   } else {
-    msgError.innerText = "Email já cadastrado.";
-    msgError.style.color = "red";
-    divError.insertAdjacentElement("beforeend", msgError);
+    htmlMsgError("Email já cadastrado.");
     return;
   }
 }

@@ -18,8 +18,7 @@
             <div class="d-flex flex-column align-items-start">
                 <label class="form-label fw-bold" for="input-signup-user">Tipo de Usuário*</label>
                 <select class="form-select text-black-50" aria-label="Default select example" id="input-signup-type">
-                    <option selected disabled>Selecione um tipo de usuário</option>
-                    <option value="Candidato">Candidato</option>
+                    <option value="Candidato" selected>Candidato</option>
                     <option value="Recrutador">Recrutador</option>
                 </select>
             </div>
@@ -34,15 +33,16 @@
             <div class="d-flex flex-column align-items-start">
                 <label class="form-label fw-bold mt-2" for="input-signup-email">Email*</label>
                 <input class="w-100 form-control text-black-50" type="email" id="input-signup-email" required>
-                <div id="input-error" class="form-text"></div>
             </div>
             <div class="d-flex flex-column align-items-start">
                 <label class="form-label fw-bold mt-2" for="input-signup-password">Senha*</label>
                 <input class="w-100 form-control text-black-50" type="password" id="input-signup-password" required>
             </div>
             <div>
+                <div id="input-error"></div>
+
                 <button class="btn btn-primary mt-3 w-50" type="button" id="btn-signup" onclick="postUser()">Criar conta</button>
-                <div class="mt-2 p-2">
+                <div class="p-2">
                     <p class="m-0">Já possui uma conta?</p>
                     <p class="m-0"><a class="fw-bold text-dark" href="../../index.html">Acesse agora</a></p>
                 </div>

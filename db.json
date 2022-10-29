@@ -17,6 +17,24 @@
       "senha": "123",
       "candidaturas": [],
       "id": 2
+    },
+    {
+      "tipo": "Candidato",
+      "nome": "asdf",
+      "dataNascimento": null,
+      "email": "rawad@teste.com",
+      "senha": "12345",
+      "candidaturas": [],
+      "id": 3
+    },
+    {
+      "tipo": "Candidato",
+      "nome": "Daniel Jacon",
+      "dataNascimento": "2001-01-07T03:00:00.000Z",
+      "email": "daniel.jacon@gmail.com",
+      "senha": "qwe123123",
+      "candidaturas": [],
+      "id": 4
     }
   ],
   "vaga": [
@@ -30,6 +48,12 @@
           "nome": "Daniel",
           "nascimento": "2001-01-07T03:00:00.000Z",
           "reprovado": true
+        },
+        {
+          "idCandidato": 4,
+          "nome": "Daniel Jacon",
+          "nascimento": "2001-01-07T03:00:00.000Z",
+          "reprovado": false
         }
       ],
       "id": 1
